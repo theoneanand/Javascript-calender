@@ -1,0 +1,25 @@
+*{box-sizing: border-box; margin: 0; padding: 0}
+body{font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif}
+#calender{
+    margin-top: 5rem;
+    width: calc(100% - 4rem);
+    max-width: 700px;
+    margin-inline: auto;
+    border: 1px solid #e0e0e0;
+
+}
+.calenderHeader{padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; background: dodgerblue;}
+#weekdays{ background: #fafafa;}
+#weekdays, #dates{display: grid; grid-template-columns: repeat(7, 1fr);}
+.weekday{text-align: center; padding: .7rem .5rem; border-bottom: 1px solid #e0e0e0;}
+.weekday:not(:last-child){border-right: 1px solid #e0e0e0;}
+#dates>*{aspect-ratio: 3/2; text-align: center; display: flex; align-items: center; justify-content: center; }
+#dates>:not(:nth-child(7n+ 7), .paddingdaystart, .paddingdayend ){border-right: 1px solid #e0e0e0;}
+#dates>div:first-of-type{border-left: 1px solid #e0e0e0;}
+#dates>:not(:nth-last-child(-n + 7)){border-bottom: 1px solid #e0e0e0;}
+
+#calender :is(select, .btn){border: none; outline: none; box-shadow: none;}
+
+#calender select{padding: .3rem 1rem; }
+#calender .btn{padding: .3rem 1rem; cursor: pointer; transition: .3s all;}
+#calender .btn:hover{background: #c00; color: #fff;}
